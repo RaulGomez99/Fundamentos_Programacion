@@ -97,6 +97,3 @@ while enPartida:
         if turnosJugados == 9 :
             enPartida = False;
             print("Empate")
-            
-    
-    
