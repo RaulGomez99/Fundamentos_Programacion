@@ -6,7 +6,6 @@ Created on Thu Sep 24 17:00:16 2020
 """
 
 from tkinter import Tk;
-from tablero import Tablero;
 from botonMina import BotonBuscaMinas;
 import random;
 
@@ -24,6 +23,7 @@ def main():
     tablero.enPartida = True;
     tablero.fichasJugadas = 0;
     tablero.acabar = acabar;
+    tablero.main = main;
     tablero.geometry("230x208");
 
     

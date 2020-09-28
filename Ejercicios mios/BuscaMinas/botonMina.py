@@ -34,6 +34,10 @@ class BotonBuscaMinas(Button):
             self.configure(bg="red");
             self.master.acabar();
             messagebox.showinfo("Derrota", "Perdiste intentelo otro ía")
+            main = self.master.main;
+            self.master.destroy();
+            main();
+            
         self.estado = 1;
         
     def rightClick(self, event):
