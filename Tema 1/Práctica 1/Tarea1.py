@@ -3,6 +3,8 @@
 Created on Thu Sep 24 12:16:46 2020
 
 @author: Raul
+
+Programa que ejecuta un calculo
 """
 
 def main():

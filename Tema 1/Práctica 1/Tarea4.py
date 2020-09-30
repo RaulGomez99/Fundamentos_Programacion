@@ -3,7 +3,9 @@
 Created on Thu Sep 24 12:47:28 2020
 
 @author: Raul
+Es un ejercicio en la que pasas unos datos y te los escribe por pantalla
 """
+
 
 def main():
     nombre = input("Dame nombre:");
