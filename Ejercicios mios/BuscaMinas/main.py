@@ -20,6 +20,7 @@ def main():
     tablero = Tk();
     tablero.title("Buscaminas 0.1");
     tablero.pulsarBotonesAlrededor = pulsarBotonesAlrededor;
+    tablero.pulsarBotonesAlrededorSelecc = pulsarBotonesAlrededorSelecc;
     tablero.enPartida = True;
     tablero.fichasJugadas = 0;
     tablero.acabar = acabar;
@@ -87,6 +88,35 @@ def pulsarBotonesAlrededor(i, j):
     if i < 7 and j < 7:
         if botones[i+1][j+1].estado == 0:
             botones[i+1][j+1].clicked();
+            
+def pulsarBotonesAlrededorSelecc(i, j):
+    acum = 0;
+    if i > 0 and j > 0: 
+        if botones[i-1][j-1].estado == 3:
+            acum+=1;
+    if i > 0 : 
+        if botones[i-1][j].estado == 3:
+            acum+=1;
+    if i > 0 and j < 7:
+        if botones[i-1][j+1].estado == 3:
+            acum+=1;
+    if j > 0 : 
+        if botones[i][j-1].estado == 3:
+            acum+=1;
+    if j < 7 :
+        if botones[i][j+1].estado == 3:
+            acum+=1;
+    if i < 7 and j > 0:
+        if botones[i+1][j-1].estado == 3:
+            acum+=1;
+    if i < 7 :
+        if botones[i+1][j].estado == 3:
+            acum+=1;
+    if i < 7 and j < 7:
+        if botones[i+1][j+1].estado == 3:
+            acum+=1;
+    if botones[i][j].num == acum:
+        pulsarBotonesAlrededor(i, j);
             
 def acabar():
     for i in range(8):

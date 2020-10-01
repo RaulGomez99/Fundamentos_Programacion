@@ -18,7 +18,10 @@ class BotonBuscaMinas(Button):
         self.bind('<Button-3>', self.rightClick)
 
     def clicked(self):
-        if self.estado != 0 or not self.master.enPartida: return;
+        if (self.estado != 0 and self.estado != 1) or not self.master.enPartida: return;
+        if self.estado == 1 :
+            self.master.pulsarBotonesAlrededorSelecc(self.i, self.j);
+            return;
         if not self.esMina:
             self.configure(text="  "+str(self.num)+"  ");
             if self.num == 0:
@@ -26,9 +29,12 @@ class BotonBuscaMinas(Button):
                 self.master.pulsarBotonesAlrededor(self.i, self.j);  
             self.master.fichasJugadas += 1;
             if self.master.fichasJugadas >= 54:
+                self.master.acabar();
                 messagebox.showinfo("Victoria", "Ehnorabuena ganaste!!!!")
                 self.master.enPartida = False;
-                self.master.acabar();
+                main = self.master.main;
+                self.master.destroy();
+                main();
         else:
             self.master.enPartida = False;
             self.configure(bg="red");
