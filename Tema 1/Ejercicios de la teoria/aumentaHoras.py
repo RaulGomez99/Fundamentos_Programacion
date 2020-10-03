@@ -16,7 +16,7 @@ def main():
     segundos%=60;
     horas+=minutos//60;
     minutos%=60;
-    print(horas,minutos,segundos);
+    print(str(horas)+":"+str(minutos)+":"+str(segundos));
     
     
 if __name__ == "__main__":

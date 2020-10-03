@@ -37,7 +37,7 @@ def main():
             number = random.randint(0, 63);
             if number not in minas:
                 minas[i] = number;
-                print(number//8, number%8);
+               # print(number//8, number%8);
                 boolean = True;
     
     #Creando botones
