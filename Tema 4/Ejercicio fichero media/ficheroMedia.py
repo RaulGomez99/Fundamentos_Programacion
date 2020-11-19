@@ -14,10 +14,12 @@ def main():
     else:
         contAprobados = 0
         contSuspendidos = 0
+        numLinea = 1
         for linea in f:
-            if linea >= "0" and linea <= "9.9999999999999999999999999999999":
+            if numLinea % 2 == 0:
                 if float(linea) >= 5: contAprobados += 1
                 else: contSuspendidos += 1
+            numLinea+=1
         print(str(contAprobados/(contAprobados+contSuspendidos)*100)+"% de aprobados")
         print(str(contSuspendidos/(contAprobados+contSuspendidos)*100)+"% de suspendidos")
             
